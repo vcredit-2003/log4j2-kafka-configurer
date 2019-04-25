@@ -1,4 +1,4 @@
-package com.vcredit.log;
+package com.vcredit.framework.logging;
 
 import org.slf4j.MDC;
 import org.springframework.boot.context.event.ApplicationEnvironmentPreparedEvent;

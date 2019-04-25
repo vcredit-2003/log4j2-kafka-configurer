@@ -1,1 +1,1 @@
-org.springframework.context.ApplicationListener=com.vcredit.log.KafkaLogStartUpListener
+org.springframework.context.ApplicationListener=com.vcredit.framework.logging.KafkaLogStartUpListener

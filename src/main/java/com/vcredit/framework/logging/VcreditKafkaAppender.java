@@ -1,4 +1,4 @@
-package com.vcredit.log;
+package com.vcredit.framework.logging;
 
 import org.apache.logging.log4j.core.*;
 import org.apache.logging.log4j.core.appender.AbstractAppender;

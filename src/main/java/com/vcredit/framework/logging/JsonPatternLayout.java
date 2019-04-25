@@ -1,4 +1,4 @@
-package com.vcredit.log;
+package com.vcredit.framework.logging;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
