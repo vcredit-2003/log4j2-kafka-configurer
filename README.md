@@ -5,7 +5,7 @@
 * 因此开发一个基于Log4j的Kafka日志输出框架
   
 ## 使用方法
-* 在pom.xml中使用以下方式加入依赖
+* 在pom.xml中使用以下方式加入依赖  
 ```
     <dependency>
         <groupId>com.vcredit.framework</groupId>
