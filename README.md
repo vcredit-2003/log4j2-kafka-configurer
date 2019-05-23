@@ -6,7 +6,7 @@
   
 ## 使用方法
 * 在pom.xml中使用以下方式加入依赖
-```$xml
+```
     <dependency>
         <groupId>com.vcredit.framework</groupId>
         <artifactId>log4j2-kafka-configurer</artifactId>
