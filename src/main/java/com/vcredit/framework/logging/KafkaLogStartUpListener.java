@@ -25,7 +25,7 @@ public class KafkaLogStartUpListener implements ApplicationListener<ApplicationE
         final String kafkaServers = findKafkaConfig(environment);
         final String logToKafka = environment.getProperty("logToKafka");
         if (!"".equals(kafkaServers) && TRUE.equals(logToKafka)) {
-            System.out.println(String.format("发现kafka配置[%s]", kafkaServers));
+            System.out.println(String.format("Kafka configuration is discovered [%s]", kafkaServers));
             MDC.put("kafka-log-enabled", logToKafka);
             MDC.put("kafka-servers", kafkaServers);
             MDC.put("application-name", nullToEmpty(environment.getProperty("spring.application.name")));

@@ -86,7 +86,7 @@ public final class VcreditKafkaAppender extends AbstractAppender {
         } catch (Exception e) {
             enabled = false;
             LOGGER.catching(e);
-            LOGGER.error("日志无法输出至Kafka，将关闭KafkaAppender!");
+            LOGGER.error("Cannot output logs to Kafka, will close KafkaAppender!");
         }
     }
 

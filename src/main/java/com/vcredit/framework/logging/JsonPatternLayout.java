@@ -199,7 +199,7 @@ public class JsonPatternLayout extends AbstractStringLayout {
             try {
                 return new ObjectMapper().writeValueAsString(this);
             } catch (JsonProcessingException e) {
-                System.err.println("序列化json异常：" + e.getMessage());
+                System.err.println("Error when JSON serializing：" + e.getMessage());
             }
             return null;
         }

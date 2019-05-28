@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>log4j2-kafka-configurer</name>
-	<description>log4j2 日志写入kafka</description>
+	<description>log4j2 kafka configurer</description>
 
 	<scm>
 		<url>http://10.138.61.72/src/framework/log4j2-kafka-configurer</url>
@@ -109,29 +109,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
-	<repositories>
-		<repository>
-			<id>vcredit-repo</id>
-			<url>http://10.138.60.221:8081/nexus/content/groups/public</url>
-		</repository>
-	</repositories>
-	<pluginRepositories>
-		<pluginRepository>
-			<id>vcredit-repo</id>
-			<url>http://10.138.60.221:8081/nexus/content/groups/public</url>
-		</pluginRepository>
-	</pluginRepositories>
-	<distributionManagement>
-		<snapshotRepository>
-			<id>vcredit-repo</id>
-			<url>http://10.138.60.221:8081/nexus/content/repositories/snapshots/</url>
-		</snapshotRepository>
-		<repository>
-			<id>vcredit-repo</id>
-			<url>http://10.138.60.221:8081/nexus/content/repositories/releases/</url>
-		</repository>
-	</distributionManagement>
-
 
 </project>
