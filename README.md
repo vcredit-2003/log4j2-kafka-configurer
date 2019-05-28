@@ -9,11 +9,11 @@ This is tool for log4j2 appender to read kafka configuration if you want to outp
 * Download the project source code and `mvn install` to install it
 * Add dependency into your pom.xml  
 ```xml
- <dependency>
+  <dependency>
     <groupId>com.vcredit.framework</groupId>
     <artifactId>log4j2-kafka-configurer</artifactId>
     <version>1.0.0-RELEASE</version>
-</dependency>
+  </dependency>
 ```
 * add `logToKafka: true` to application.yml, which indicates properties related to Kafka which be loaded
 * ensure the kafka properties are correctly configured in `spring.kafka.bootstrap-servers`
