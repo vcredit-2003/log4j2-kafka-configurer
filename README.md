@@ -1,3 +1,5 @@
+This is tool for log4j2 appender to read kafka configuration if you want to output your logs by log4j2 in Spring boot applications. 
+
 ## Backgrounds
 * Spring boot introduces logback as its default logging framework, but no Kafka appender integrated within logback 
 * A simple solution is to use https://github.com/danielwegener/logback-kafka-appender
