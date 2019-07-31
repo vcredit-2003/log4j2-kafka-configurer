@@ -5,7 +5,7 @@
 
 	<groupId>com.vcredit.framework</groupId>
 	<artifactId>log4j2-kafka-configurer</artifactId>
-	<version>1.0.0-RELEASE</version>
+	<version>1.0.1-RELEASE</version>
 	<packaging>jar</packaging>
 
 	<name>log4j2-kafka-configurer</name>
@@ -71,6 +71,30 @@
 		</dependency>
 
 	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>vcredit-repo</id>
+			<url>http://pro.nexus.vcredit.com.local/repository/maven-public/</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>vcredit-repo</id>
+			<url>http://pro.nexus.vcredit.com.local/repository/maven-public/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>vcredit-repo</id>
+			<url>http://pro.nexus.vcredit.com.local/repository/msa</url>
+		</snapshotRepository>
+		<repository>
+			<id>vcredit-repo</id>
+			<url>http://pro.nexus.vcredit.com.local/repository/msa</url>
+		</repository>
+	</distributionManagement>
 
 	<build>
 		<plugins>
