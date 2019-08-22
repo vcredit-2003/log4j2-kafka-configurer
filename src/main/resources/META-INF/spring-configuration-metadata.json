@@ -1,8 +1,0 @@
-{
-  "properties": [
-    {
-      "name": "logToKafka",
-      "type": "java.lang.Boolean"
-    }
-  ]
-}
