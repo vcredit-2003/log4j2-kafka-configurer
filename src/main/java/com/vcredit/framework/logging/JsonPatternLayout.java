@@ -11,6 +11,7 @@ import org.apache.logging.log4j.core.layout.AbstractStringLayout;
 import org.apache.logging.log4j.core.layout.PatternLayout;
 import org.apache.logging.log4j.core.layout.PatternSelector;
 import org.apache.logging.log4j.core.pattern.RegexReplacement;
+import org.apache.logging.log4j.util.Strings;
 
 import java.nio.charset.Charset;
 import java.time.Instant;
@@ -201,7 +202,7 @@ public class JsonPatternLayout extends AbstractStringLayout {
             } catch (JsonProcessingException e) {
                 System.err.println("Error when JSON serializing：" + e.getMessage());
             }
-            return null;
+            return Strings.EMPTY;
         }
 
         public String getTimestamp() {
