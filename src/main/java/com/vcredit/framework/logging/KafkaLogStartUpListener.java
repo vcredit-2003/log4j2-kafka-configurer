@@ -2,6 +2,7 @@ package com.vcredit.framework.logging;
 
 import org.slf4j.MDC;
 import org.springframework.boot.context.event.ApplicationEnvironmentPreparedEvent;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.boot.context.logging.LoggingApplicationListener;
 import org.springframework.context.ApplicationListener;
 import org.springframework.core.Ordered;
@@ -13,17 +14,18 @@ import java.net.UnknownHostException;
 /**
  * @author Dong Zhuming
  */
-public class KafkaLogStartUpListener implements ApplicationListener<ApplicationEnvironmentPreparedEvent>, Ordered {
+public class KafkaLogStartUpListener implements ApplicationListener<ApplicationReadyEvent>, Ordered {
 
     private static final String TRUE = "true";
 
     @Override
-    public void onApplicationEvent(ApplicationEnvironmentPreparedEvent event) {
+    public void onApplicationEvent(ApplicationReadyEvent event) {
 
-        final ConfigurableEnvironment environment = event.getEnvironment();
+        final ConfigurableEnvironment environment = event.getApplicationContext().getEnvironment();
 
         final String kafkaServers = findKafkaConfig(environment);
         final String logToKafka = environment.getProperty("logToKafka");
+        System.out.println("logToKafka: " + logToKafka);
         if (!"".equals(kafkaServers) && TRUE.equals(logToKafka)) {
             System.out.println(String.format("Kafka configuration is discovered [%s]", kafkaServers));
             MDC.put("kafka-log-enabled", logToKafka);
