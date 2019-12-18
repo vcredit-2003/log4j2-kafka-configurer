@@ -11,6 +11,7 @@ import org.apache.logging.log4j.core.layout.AbstractStringLayout;
 import org.apache.logging.log4j.core.layout.PatternLayout;
 import org.apache.logging.log4j.core.layout.PatternSelector;
 import org.apache.logging.log4j.core.pattern.RegexReplacement;
+import org.apache.logging.log4j.util.ReadOnlyStringMap;
 import org.apache.logging.log4j.util.Strings;
 
 import java.nio.charset.Charset;
@@ -81,10 +82,15 @@ public class JsonPatternLayout extends AbstractStringLayout {
                 LocalDateTime.ofInstant(
                         Instant.ofEpochMilli(logEvent.getTimeMillis()),
                         ZoneId.systemDefault()));
+        ReadOnlyStringMap contextData = logEvent.getContextData();
         String jsonStr = new JsonLoggerInfo(
                 this.projectName, message, logEvent.getLevel().name(),
                 timestamp, this.serviceName,
-                this.profile, this.ip, "", "", "", "",
+                this.profile, this.ip,
+                contextData != null ? contextData.getValue("X-B3-TraceId") : "",
+                contextData != null ? contextData.getValue("X-B3-SpanId") : "",
+                contextData != null ? contextData.getValue("X-B3-ParentSpanId") : "",
+                contextData != null ? contextData.getValue("X-Span-Export") : "",
                 logEvent.getThreadId(), logEvent.getThreadName(), logEvent.getThreadPriority(), logEvent.getLoggerName()
         ).toString();
         return jsonStr + "\n";

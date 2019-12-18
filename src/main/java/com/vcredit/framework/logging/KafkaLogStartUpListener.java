@@ -14,14 +14,14 @@ import java.net.UnknownHostException;
 /**
  * @author Dong Zhuming
  */
-public class KafkaLogStartUpListener implements ApplicationListener<ApplicationReadyEvent>, Ordered {
+public class KafkaLogStartUpListener implements ApplicationListener<ApplicationEnvironmentPreparedEvent>, Ordered {
 
     private static final String TRUE = "true";
 
     @Override
-    public void onApplicationEvent(ApplicationReadyEvent event) {
+    public void onApplicationEvent(ApplicationEnvironmentPreparedEvent event) {
 
-        final ConfigurableEnvironment environment = event.getApplicationContext().getEnvironment();
+        final ConfigurableEnvironment environment = event.getEnvironment();
 
         final String kafkaServers = findKafkaConfig(environment);
         final String logToKafka = environment.getProperty("logToKafka");
