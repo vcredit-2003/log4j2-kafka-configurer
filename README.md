@@ -12,7 +12,7 @@ This is tool for log4j2 appender to read kafka configuration if you want to outp
   <dependency>
     <groupId>com.vcredit.framework</groupId>
     <artifactId>log4j2-kafka-configurer</artifactId>
-    <version>1.0.0-RELEASE</version>
+    <version>1.0.4-RELEASE</version>
   </dependency>
 ```
 * add `logToKafka: true` to application.yml, which indicates properties related to Kafka which be loaded
